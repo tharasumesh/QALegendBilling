@@ -89,7 +89,7 @@ public class UserTest extends Base {
 		login.enterPassword(pwd);
 		home=login.clickSubmit1();
 		String actUName=Uname;
-		Assert.assertEquals(actUName, Uname,ErrorMessages.LOGIN_FAILURE_MESSAGE);
+		Assert.assertEquals(actUName,Uname,ErrorMessages.LOGIN_FAILURE_MESSAGE);
 		
 	
 	}
