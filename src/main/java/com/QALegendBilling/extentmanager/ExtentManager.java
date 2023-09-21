@@ -8,7 +8,7 @@ import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
 public class ExtentManager {
-	
+
 	public static ExtentReports extent;
 	public static Platform platform;
 	private static final String reportFileName = "Extent.html";

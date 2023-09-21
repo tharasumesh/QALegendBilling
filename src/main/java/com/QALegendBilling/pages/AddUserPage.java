@@ -13,7 +13,8 @@ public class AddUserPage extends TestHelperUtility {
 	public AddUserPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-} 
+	}
+
 	private final String _isActive = "//input[@class='input-icheck status']";
 	@FindBy(xpath = _isActive)
 	private WebElement isActive;
@@ -53,11 +54,11 @@ public class AddUserPage extends TestHelperUtility {
 	private final String _salesCommisionPercentageField = "//input[@id='cmmsn_percent']";
 	@FindBy(xpath = _salesCommisionPercentageField)
 	private WebElement salesCommisionPercentageField;
-	
+
 	private final String _updateButton = "submit_user_button";
 	@FindBy(id = _updateButton)
 	private WebElement updateButton;
-	
+
 	public void clickOnIsActive() {
 		page.clickOnElement(isActive);
 
@@ -68,13 +69,12 @@ public class AddUserPage extends TestHelperUtility {
 		return new UserPage(driver);
 
 	}
-	
-	public UserPage ClickUpdateButton()
-	{
-		wait.waitForElementToBeVisible(driver,updateButton);
+
+	public UserPage ClickUpdateButton() {
+		wait.waitForElementToBeVisible(driver, updateButton);
 		page.clickOnElement(updateButton);
 		return new UserPage(driver);
-		
+
 	}
 
 	public void enterPrefix(String prefix) {
@@ -85,7 +85,9 @@ public class AddUserPage extends TestHelperUtility {
 	public void enterFirstNameField(String firstName) {
 		page.enterText(firstNameField, firstName);
 	}
-	public void enterUserDetails(String prefix, String firstName,String lastName, String email, String username, String password, String confirmPassword, String salesCommissionPercentage) {
+
+	public void enterUserDetails(String prefix, String firstName, String lastName, String email, String username,
+			String password, String confirmPassword, String salesCommissionPercentage) {
 		wait.waitForElementToBeVisible(driver, prefixField);
 		page.enterText(prefixField, prefix);
 		page.enterText(firstNameField, firstName);
@@ -96,12 +98,13 @@ public class AddUserPage extends TestHelperUtility {
 		page.enterText(confirmPasswordField, confirmPassword);
 		page.enterText(salesCommisionPercentageField, salesCommissionPercentage);
 	}
+
 	public void editUserDetails(String email) {
-		wait.waitForElementToBeVisible(driver,emailField);
+		wait.waitForElementToBeVisible(driver, emailField);
 		emailField.clear();
-		wait.waitForElementToBeVisible(driver,emailField);
-		page.enterText(emailField,email);
-	}	
+		wait.waitForElementToBeVisible(driver, emailField);
+		page.enterText(emailField, email);
+	}
 
 	public void enterLastNameField(String lastName) {
 		page.enterText(lastNameField, lastName);
@@ -127,13 +130,9 @@ public class AddUserPage extends TestHelperUtility {
 		page.enterText(salesCommisionPercentageField, salesCommissionPercentage);
 	}
 
-	public  AddUserPage savebutton() {
+	public AddUserPage savebutton() {
 		page.clickOnElement(confirmPasswordField);
 		return new AddUserPage(driver);
 	}
-	
-	
+
 }
-
-
-		

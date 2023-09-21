@@ -19,10 +19,10 @@ import com.QALegendBilling.constants.Constants;
 import com.QALegendBilling.extentmanager.ExtentManager;
 import com.QALegendBilling.utilities.TestHelperUtility;
 
-public class Base extends TestHelperUtility {
+public class Base  {
 
 	public WebDriver driver;
-	public Properties prop;
+	public static Properties prop;
 	public FileInputStream fs;
 
 	public Base() {
@@ -40,21 +40,19 @@ public class Base extends TestHelperUtility {
 	}
 
 	@BeforeMethod(alwaysRun = true)
-	public void setUP() {
-		String browser = prop.getProperty("browser");
+
+	@Parameters({ "browser" })
+	public void setUP(String browser) {
 		String url = prop.getProperty("url");
 		driver = DriverFactory.testInitialization(browser);
-		driver.get(url);
+		driver.get(url); //
+		}
+
+	public static String getDriverPath()
+	{
+		String driverPath=System.getProperty("user.dir")+prop.getProperty("driverPath");
+		return driverPath;
 	}
-	
-	
-	/* @BeforeMethod(alwaysRun = true)
-	 
-	  @Parameters({"browser"}) public void setUP(String browser) { 
-		 browser = prop.getProperty("browser"); String url = prop.getProperty("url"); driver =
-	 DriverFactory.testInitialization(browser); driver.get(url); //
-	 wait.setImplicitWait(driver);  }*/
-	 
 
 	@AfterMethod(alwaysRun = true)
 	public void tearDown(ITestResult result) throws IOException {
