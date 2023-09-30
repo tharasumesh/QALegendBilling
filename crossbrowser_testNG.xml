@@ -9,7 +9,7 @@
 		<classes>
 			<class name="com.QALegendBilling.testscript.UserTest">
 				<methods>
-					<include name="Tc_006_verify_Add_User" />
+					<include name="Tc_001verify_Valid_Login" />
 					</methods>
 			</class>
 		</classes>
@@ -21,7 +21,7 @@
 			<class name="com.QALegendBilling.testscript.LoginTest">
 				<methods>
 					<exclude name="Tc_001verify_Valid_Login" />
-					<exclude name="Tc_002verifyInValidLogin" />
+					<include name="Tc_002verifyInValidLogin" />
 				</methods>
 			</class>
 		</classes>

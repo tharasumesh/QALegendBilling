@@ -9,18 +9,19 @@
   <groups>
   <run>
   <include name="Regression"/>
-  <exclude name="Sanity"/>
-  <exclude name="Smoke"/>
+  <include name="Sanity"/>
+  <include name="Smoke"/>
   </run>
   </groups>
     <classes>
       <class name="com.QALegendBilling.testscript.ResetTest"/>
-      <class name="com.QALegendBilling.automationcore.Base"/>
-      <class name="com.QALegendBilling.automationcore.DriverFactory"/>
       <class name="com.QALegendBilling.testscript.UseManagementTest"/>
       <class name="com.QALegendBilling.testscript.LoginTest"/>
       <class name="com.QALegendBilling.testscript.UserTest"/>
       <class name="com.QALegendBilling.testscript.SignoutTest"/>
+      <class name="com.QALegendBilling.testscript.RoleTest"/>
+      <class name="com.QALegendBilling.testscript.EditTest"/>
+      <class name="com.QALegendBilling.testscript.DeleteTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
